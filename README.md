@@ -1,6 +1,5 @@
-# Flixly site (v2)
+# Flixly site v3
 
-Clean Freebuff-inspired UI — light, high contrast, no decorative gradients.
+Dark Freebuff-inspired UI (`#0A0F15`, neon green accent).
 
-- Preview: https://mastersoon1754-ui.github.io/flixly-site/
-- Packs: Sprint 349 € · Pack 3 899 € · Retainer 249 €/mois
+Preview: https://mastersoon1754-ui.github.io/flixly-site/
