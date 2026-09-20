@@ -8,6 +8,7 @@
   const visuals = [...document.querySelectorAll(".step-visual")];
   const demoImg = document.getElementById("live-render");
 
+  // Cache-bust live render
   if (demoImg) {
     demoImg.src = `assets/latest.svg?v=${Date.now()}`;
   }
@@ -27,6 +28,7 @@
     visuals.forEach((v, i) => v.classList.toggle("active", i === index));
   }
 
+  // Sticky story: which step is closest to viewport center
   function updateStory() {
     if (!steps.length) return;
     const mid = window.innerHeight * 0.42;
@@ -50,6 +52,7 @@
     if (progress) progress.style.width = `${p * 100}%`;
     if (nav) nav.classList.toggle("scrolled", window.scrollY > 24);
 
+    // Parallax orbs + hero phone
     const y = window.scrollY;
     orbs.forEach((orb, i) => {
       const speed = i === 0 ? 0.18 : -0.12;
