@@ -1,7 +1,6 @@
-# Flixly — site démo
+# Flixly site (v2)
 
-**flixly.me**
+Clean Freebuff-inspired UI — light, high contrast, no decorative gradients.
 
-- `index.html` — landing marketing avec animations scroll
-- `live.html` — page minimale pipeline
 - Preview: https://mastersoon1754-ui.github.io/flixly-site/
+- Packs: Sprint 349 € · Pack 3 899 € · Retainer 249 €/mois
