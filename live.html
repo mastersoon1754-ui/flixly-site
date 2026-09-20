@@ -4,28 +4,37 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Flixly — Rendu live</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    .box { max-width: 420px; margin: 3.5rem auto; padding: 1.4rem; border: 1px solid var(--line); border-radius: 16px; background: var(--bg-card); text-align: center; }
-    .box img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); margin: 1rem 0; }
-    .meta { color: var(--muted); font-size: 0.85rem; }
-  </style>
 </head>
 <body>
-  <header class="nav"><div class="wrap nav-inner">
-    <a class="logo" href="index.html">Flix<span>ly</span></a>
-    <a class="btn btn-ghost" href="index.html">← Landing</a>
-  </div></header>
-  <div class="box">
-    <p class="hero-kicker" style="margin:0">pipeline</p>
-    <h1 style="font-size:1.4rem;margin:0.4rem 0">Latest render</h1>
-    <img id="r" src="assets/latest.svg" alt="Rendu Flixly" width="800" height="800" />
-    <p class="meta" id="s"></p>
-  </div>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/logo.svg" width="24" height="24" alt="" />
+        <span>Flixly</span>
+      </a>
+      <a class="btn-signin" href="index.html">Landing</a>
+    </div>
+  </header>
+  <main class="hero-copy" style="padding-bottom:4rem">
+    <p class="hero-lead" style="margin-bottom:1rem">pipeline · photo → cartoon → site</p>
+    <h1 style="font-size:1.6rem">Latest render</h1>
+    <div class="mock" style="max-width:420px;margin:1.5rem auto 0;text-align:left">
+      <div class="mock-bar"><i></i><i></i><i></i><span>published</span></div>
+      <div class="mock-body">
+        <img id="r" src="assets/latest.svg" alt="Rendu Flixly" width="800" height="800" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;border:1px solid var(--line)" />
+        <p class="muted-sm" id="s"></p>
+      </div>
+    </div>
+  </main>
   <script>
-    var v=Date.now();
-    document.getElementById('r').src='assets/latest.svg?v='+v;
-    document.getElementById('s').textContent='Flixly · '+v;
+    var v = Date.now();
+    document.getElementById("r").src = "assets/latest.svg?v=" + v;
+    document.getElementById("s").textContent = "Flixly · " + v;
   </script>
 </body>
 </html>
