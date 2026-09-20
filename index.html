@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Flixly — Automatisations pour TPE, sans la technique</title>
-  <meta name="description" content="Flixly livre des workflows Make/n8n clés en main. Packs dès 349 €. Démo : photo → cartoon → site mis à jour." />
+  <title>Flixly — Automatisations qui font gagner des heures</title>
+  <meta name="description" content="Flixly livre des workflows Make/n8n. Packs 349 € / 899 € / 249 €/mois. Démo photo → cartoon → site." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <canvas id="dust" aria-hidden="true"></canvas>
+
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="logo" href="#top">Flix<span>ly</span></a>
       <nav class="nav-links">
-        <a href="#comment">Comment</a>
+        <a href="#preuve">Preuve</a>
         <a href="#packs">Packs</a>
         <a href="#demo">Démo</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn-dark" href="#contact">Demander un devis</a>
+        <a class="btn btn-green" href="#contact">Devis →</a>
       </nav>
     </div>
   </header>
@@ -24,182 +26,155 @@
   <main id="top">
     <section class="hero">
       <div class="wrap">
-        <p class="hero-kicker">flixly.me · automatisations sur mesure</p>
-        <h1>Moins de tâches répétitives. Plus de clients traités.</h1>
-        <p class="hero-lead">Flixly branche Make ou n8n sur vos outils. Vous gardez la relation client — on livre le workflow, documenté, prêt à tourner.</p>
+        <p class="hero-kicker">flixly.me · make / n8n</p>
+        <h1>Des heures récupérées. Chaque semaine.</h1>
+        <p class="hero-lead">Flixly livre des automatisations pour TPE et indépendants. Vous closez. On branche. Le process tourne.</p>
+        <div class="pills" role="tablist" aria-label="Offres">
+          <button type="button" class="pill active" data-pill="sprint">Sprint</button>
+          <button type="button" class="pill" data-pill="pack3">Pack 3</button>
+          <button type="button" class="pill" data-pill="retainer">Retainer</button>
+          <button type="button" class="pill" data-pill="demo">Démo photo</button>
+        </div>
+        <p id="pill-copy" class="hero-lead" style="margin-top:-0.5rem;font-size:0.98rem">1 workflow livré — cadrage, build, tests, handoff.</p>
         <div class="hero-cta">
-          <a class="btn btn-green" href="#contact">Parler 20 minutes</a>
-          <a class="btn btn-light" href="#packs">Voir les packs</a>
+          <a class="btn btn-green btn-block" href="#contact">Parler 20 min <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="comment">
+    <section class="section" id="preuve" data-animate>
       <div class="wrap">
-        <h2>Comment ça se passe</h2>
-        <p class="lede">Un cadrage court, des accès minimum, une livraison testée. Pas besoin d’équipe tech ni de Mac.</p>
-        <div class="steps">
-          <article class="step">
-            <div class="n">01 · Cadrage</div>
-            <h3>Un workflow prioritaire</h3>
-            <p>Objectif, outils déjà en place, critères de succès mesurables. Hors scope écrit.</p>
+        <h2>Avant / avec Flixly</h2>
+        <p class="lede">Même travail. Moins de coller-copier. Chiffres illustratifs pour cadrer le ROI.</p>
+        <div class="compare">
+          <article class="card before">
+            <h3>Manuel</h3>
+            <p class="stat bad" data-count="12" data-suffix=" h">0 h</p>
+            <p>relances, exports, mises à jour site — perdues chaque mois</p>
           </article>
-          <article class="step">
-            <div class="n">02 · Build</div>
-            <h3>On branche, on teste</h3>
-            <p>Make ou n8n, secrets hors code, scénarios réels. Vous validez avant handoff.</p>
+          <article class="card after">
+            <h3>Avec Flixly</h3>
+            <p class="stat good" data-count="2" data-suffix=" h">0 h</p>
+            <p>supervision + exceptions. Le reste tourne tout seul.</p>
           </article>
-          <article class="step">
-            <div class="n">03 · Livraison</div>
-            <h3>Runbook + passation</h3>
-            <p>Doc courte, comment rejouer, option retainer pour faire évoluer.</p>
-          </article>
+        </div>
+
+        <div class="bars" style="margin-top:2rem" data-animate>
+          <div class="bar-row">
+            <label><span>Saisie / re-saisie</span><strong>−80%</strong></label>
+            <div class="track"><div class="fill" data-width="80%"></div></div>
+          </div>
+          <div class="bar-row">
+            <label><span>Délai de réponse client</span><strong>−60%</strong></label>
+            <div class="track"><div class="fill" data-width="60%"></div></div>
+          </div>
+          <div class="bar-row">
+            <label><span>Oublis de relance</span><strong class="stat bad" style="font-size:1rem">risque</strong></label>
+            <div class="track"><div class="fill red" data-width="90%"></div></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="demo" style="padding-bottom:0;border-bottom:0">
+    <section class="section" id="calc" data-animate>
+      <div class="wrap">
+        <h2>Tu gagnes combien ?</h2>
+        <p class="lede">Estimateur rapide — ajuste les curseurs. Pas une promesse contractuelle.</p>
+        <div class="calc card">
+          <div>
+            <label>Tâches répétitives / jour (<span id="calc-tasks-val">8</span>)</label>
+            <input id="calc-tasks" type="range" min="2" max="30" value="8" />
+            <label>Minutes par tâche (<span id="calc-mins-val">12</span>)</label>
+            <input id="calc-mins" type="range" min="3" max="45" value="12" />
+          </div>
+          <div class="calc-out">
+            <div class="big" id="calc-hours">32</div>
+            <div class="sub" id="calc-label">heures / mois récupérées (estimation)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
       <div class="wrap">
         <h2>Démo phare</h2>
-        <p class="lede">Photo envoyée → rendu cartoon → page site mise à jour. Ce que vous vendez, vous le montrez.</p>
-
-        <article class="product" style="padding-top:0">
+        <p class="lede">Photo → cartoon → page mise à jour. Ce que vous vendez, vous le montrez.</p>
+        <div class="product">
           <div>
-            <span class="tag">Produit · Photo → site</span>
-            <h2>Une photo. Une page à jour.</h2>
-            <p>Formulaire, mail ou Drive. Génération d’image stylisée, publication sur page statique, confirmation avec le lien.</p>
+            <div class="tag">Photo → site</div>
+            <p style="color:var(--muted)">Formulaire / mail / Drive → génération stylisée → asset publié + notif avec le lien.</p>
             <ul>
-              <li>Canal unique pour le MVP (Tally / webhook)</li>
-              <li>Stack cloud : n8n + hébergement Pages</li>
-              <li>États tracés : received → published (ou failed)</li>
+              <li>1 canal MVP (Tally / webhook)</li>
+              <li>n8n + Pages</li>
+              <li>États : received → published</li>
             </ul>
-            <a class="btn btn-light" href="live.html">Ouvrir la page rendu →</a>
+            <p style="margin-top:1rem"><a class="btn btn-ghost" href="live.html">Page rendu →</a></p>
           </div>
           <div class="mock" aria-hidden="true">
             <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
             <div class="mock-body">
-              <div class="mock-row"><div><strong>photo.jpg</strong><br /><span>reçu · formulaire</span></div><span>received</span></div>
-              <div class="mock-row"><div><strong>génération</strong><br /><span>style cartoon</span></div><span>generating</span></div>
-              <div class="mock-preview"><img src="assets/latest.svg" alt="" width="400" height="400" /></div>
-              <p class="mock-status">published · page live</p>
+              <div class="mock-row"><span>photo.jpg</span><span class="ok">received</span></div>
+              <div class="mock-row"><span>cartoon</span><span class="ok">generating</span></div>
+              <img src="assets/latest.svg" alt="" width="400" height="400" />
+              <div class="mock-row" style="margin-top:0.5rem"><span>latest.svg</span><span class="ok">published</span></div>
             </div>
           </div>
-        </article>
+        </div>
       </div>
     </section>
 
     <section class="section" id="packs">
       <div class="wrap">
         <h2>Packs</h2>
-        <p class="lede">Prix figés. Arthur close et facture (SIRET). Accès outils fournis par vous.</p>
-
-        <article class="product">
-          <div>
-            <span class="tag">Sprint</span>
-            <h2>1 workflow clé en main</h2>
-            <p class="price-line">349 € <small>une fois</small></p>
-            <p>Cadrage → build → tests → handoff. Idéal pour lancer la démo photo ou un process unique.</p>
-            <a class="btn btn-dark" href="#contact">Choisir Sprint</a>
-          </div>
-          <div class="mock">
-            <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
-            <div class="mock-body">
-              <div class="mock-row"><strong>Périmètre</strong><span>1 automatisation</span></div>
-              <div class="mock-row"><strong>Livrables</strong><span>flux + runbook</span></div>
-              <div class="mock-row"><strong>Délai typique</strong><span>quelques jours*</span></div>
-              <p style="margin:0.5rem 0 0;font-size:0.8rem;color:var(--muted)">* une fois les accès OK</p>
+        <p class="lede">Prix figés. Arthur close et facture (SIRET).</p>
+        <div class="products">
+          <article class="product">
+            <div>
+              <div class="tag">Sprint</div>
+              <div class="price">349 € <small>1 workflow</small></div>
+              <ul>
+                <li>Cadrage → build → tests</li>
+                <li>Runbook de handoff</li>
+                <li>Idéal démo photo ou 1 process</li>
+              </ul>
             </div>
-          </div>
-        </article>
-
-        <article class="product">
-          <div>
-            <span class="tag">Pack 3</span>
-            <h2>Trois workflows, un périmètre figé</h2>
-            <p class="price-line">899 € <small>une fois</small></p>
-            <p>Intégration, documentation, session de passation. Ordre de priorisation fixé au cadrage.</p>
-            <a class="btn btn-green" href="#contact">Choisir Pack 3</a>
-          </div>
-          <div class="mock">
-            <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
-            <div class="mock-body">
-              <div class="mock-row"><strong>Périmètre</strong><span>3 automatisations</span></div>
-              <div class="mock-row"><strong>Passation</strong><span>session incluse</span></div>
-              <div class="mock-row"><strong>Doc</strong><span>par workflow</span></div>
+            <div class="product-side">Délai typique : quelques jours une fois les accès OK.</div>
+          </article>
+          <article class="product">
+            <div>
+              <div class="tag">Pack 3</div>
+              <div class="price">899 € <small>3 workflows</small></div>
+              <ul>
+                <li>Périmètre figé à 3</li>
+                <li>Doc + session de passation</li>
+                <li>Priorisation au cadrage</li>
+              </ul>
             </div>
-          </div>
-        </article>
-
-        <article class="product">
-          <div>
-            <span class="tag">Retainer</span>
-            <h2>Maintenance et petites évolutions</h2>
-            <p class="price-line">249 € <small>/ mois</small></p>
-            <p>Monitoring, correctifs, priorisation mensuelle. Un nouveau workflow majeur = Sprint ou avenant.</p>
-            <a class="btn btn-light" href="#contact">En parler</a>
-          </div>
-          <div class="mock">
-            <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
-            <div class="mock-body">
-              <div class="mock-row"><strong>Cadence</strong><span>hebdo / mensuel</span></div>
-              <div class="mock-row"><strong>Inclus</strong><span>bugs mineurs, prompts</span></div>
-              <div class="mock-row"><strong>Hors scope</strong><span>nouveau flux majeur</span></div>
+            <div class="product-side">Le pack le plus demandé quand plusieurs flux se touchent.</div>
+          </article>
+          <article class="product">
+            <div>
+              <div class="tag">Retainer</div>
+              <div class="price">249 € <small>/ mois</small></div>
+              <ul>
+                <li>Monitoring & correctifs</li>
+                <li>Petites évolutions</li>
+                <li>Priorisation mensuelle</li>
+              </ul>
             </div>
-          </div>
-        </article>
-
-        <h2 style="margin-top:2rem">Comparaison</h2>
-        <p class="lede">Vue d’ensemble pour choisir vite.</p>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Sprint</th>
-                <th>Pack 3</th>
-                <th>Retainer</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Prix</strong></td>
-                <td>349 €</td>
-                <td>899 €</td>
-                <td>249 € / mois</td>
-              </tr>
-              <tr>
-                <td><strong>Workflows</strong></td>
-                <td>1</td>
-                <td>3</td>
-                <td>évolutions mineures</td>
-              </tr>
-              <tr>
-                <td><strong>Handoff</strong></td>
-                <td>runbook</td>
-                <td>runbook + session</td>
-                <td>suivi continu</td>
-              </tr>
-              <tr>
-                <td><strong>Idéal si</strong></td>
-                <td>1 process douloureux</td>
-                <td>plusieurs flux liés</td>
-                <td>déjà livré, à maintenir</td>
-              </tr>
-            </tbody>
-          </table>
+            <div class="product-side">Nouveau workflow majeur = Sprint ou avenant.</div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="exemples">
       <div class="wrap">
-        <h2>Exemples de workflows</h2>
-        <p class="lede">Autres cas fréquents, même process de livraison.</p>
+        <h2>Autres workflows</h2>
         <div class="examples">
-          <div class="example"><div class="label">Photo → site</div><p>Envoi photo → cartoon / 3D → page statique mise à jour + notif.</p></div>
-          <div class="example"><div class="label">Leads → CRM</div><p>Formulaire / LinkedIn / Malt → enrichissement basique → fiche CRM + notif.</p></div>
-          <div class="example"><div class="label">Relance J+3</div><p>Devis non signé → rappel J+3 → statut CRM mis à jour.</p></div>
-          <div class="example"><div class="label">Form → PDF</div><p>Réponses formulaire → template → PDF → envoi client + archivage.</p></div>
+          <div class="example"><div class="label">Leads → CRM</div><p>Capture → enrichissement basique → fiche + notif équipe.</p></div>
+          <div class="example"><div class="label">Relance J+3</div><p>Devis non signé → rappel → statut CRM à jour.</p></div>
+          <div class="example"><div class="label">Form → PDF</div><p>Réponses → template → PDF → envoi + archivage.</p></div>
         </div>
       </div>
     </section>
@@ -207,37 +182,20 @@
     <section class="section" id="faq">
       <div class="wrap">
         <h2>FAQ</h2>
-        <p class="lede">Les questions qui reviennent au cadrage.</p>
         <div class="faq">
-          <details>
-            <summary>Faut-il un Mac ou une équipe tech ?</summary>
-            <p class="ans">Non. Stack cloud (Make / n8n) + agents. Rien de critique à installer en local.</p>
-          </details>
-          <details>
-            <summary>Qui facture ?</summary>
-            <p class="ans">Arthur (SIRET). Close commercial côté Arthur.</p>
-          </details>
-          <details>
-            <summary>Combien de temps pour un Sprint ?</summary>
-            <p class="ans">Cadrage puis livraison en quelques jours selon accès et complexité. La démo photo vise ~48 h une fois les accès OK.</p>
-          </details>
-          <details>
-            <summary>Et après la livraison ?</summary>
-            <p class="ans">Retainer 249 € / mois : monitoring, petits correctifs, priorisation des évolutions.</p>
-          </details>
-          <details>
-            <summary>Données / RGPD ?</summary>
-            <p class="ans">Accès limités au besoin, pas de stockage inutile. Hébergement et APIs choisis avec vous.</p>
-          </details>
+          <details><summary>Faut-il un Mac / une équipe tech ?</summary><p class="ans">Non. Stack cloud Make/n8n. Rien de critique en local.</p></details>
+          <details><summary>Qui facture ?</summary><p class="ans">Arthur (SIRET). Close commercial côté Arthur.</p></details>
+          <details><summary>Délai d’un Sprint ?</summary><p class="ans">Quelques jours après accès. Démo photo ~48 h une fois OK.</p></details>
+          <details><summary>Et après ?</summary><p class="ans">Retainer 249 €/mois : monitoring, petits correctifs, priorisation.</p></details>
         </div>
       </div>
     </section>
 
     <div class="wrap">
       <section class="cta" id="contact">
-        <h2>Prochaine étape : 20 minutes</h2>
-        <p>On choisit 1 workflow prioritaire. Devis Sprint ou Pack 3 sous 24–48 h.</p>
-        <a class="btn btn-green" href="mailto:hello@flixly.me?subject=Flixly%20—%20cadrage%2020%20min">Écrire à hello@flixly.me</a>
+        <h2>20 minutes pour choisir le workflow n°1</h2>
+        <p>Devis Sprint ou Pack 3 sous 24–48 h.</p>
+        <a class="btn btn-green btn-block" href="mailto:hello@flixly.me?subject=Flixly%20—%20cadrage">Écrire à hello@flixly.me →</a>
       </section>
     </div>
   </main>
@@ -248,6 +206,6 @@
       <span>Make / n8n · sans Mac</span>
     </div>
   </footer>
-  <script src="js/faq.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
