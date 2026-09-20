@@ -3,209 +3,375 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Flixly — Automatisations qui font gagner des heures</title>
-  <meta name="description" content="Flixly livre des workflows Make/n8n. Packs 349 € / 899 € / 249 €/mois. Démo photo → cartoon → site." />
+  <title>Flixly — Automatisations pour TPE / PME</title>
+  <meta name="description" content="Flixly livre des workflows Make / n8n pour TPE et indépendants. Sprint 349 €, Pack 3 899 €, Retainer 249 €/mois. Démo photo → cartoon → site." />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="sky" aria-hidden="true">
+    <canvas id="dust"></canvas>
+  </div>
 
   <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="logo" href="#top">Flix<span>ly</span></a>
-      <nav class="nav-links">
-        <a href="#preuve">Preuve</a>
-        <a href="#packs">Packs</a>
-        <a href="#demo">Démo</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn-green" href="#contact">Devis →</a>
-      </nav>
+    <div class="nav-inner">
+      <a class="logo" href="#top">
+        <img src="assets/logo.svg" width="24" height="24" alt="" />
+        <span>Flixly</span>
+      </a>
+      <div class="nav-right">
+        <details class="menu">
+          <summary>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+            Offres
+            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="menu-pop">
+            <a href="#sprint">Sprint — 349 €</a>
+            <a href="#pack3">Pack 3 — 899 €</a>
+            <a href="#retainer">Retainer — 249 €/mois</a>
+            <a href="#demo">Démo photo → site</a>
+            <a href="#calc">Calculateur</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </details>
+        <a class="btn-signin" href="#contact">Contact</a>
+      </div>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="wrap">
-        <p class="hero-kicker">flixly.me · make / n8n</p>
-        <h1>Des heures récupérées. Chaque semaine.</h1>
-        <p class="hero-lead">Flixly livre des automatisations pour TPE et indépendants. Vous closez. On branche. Le process tourne.</p>
-        <div class="pills" role="tablist" aria-label="Offres">
-          <button type="button" class="pill active" data-pill="sprint">Sprint</button>
-          <button type="button" class="pill" data-pill="pack3">Pack 3</button>
-          <button type="button" class="pill" data-pill="retainer">Retainer</button>
-          <button type="button" class="pill" data-pill="demo">Démo photo</button>
+      <div class="hero-copy">
+        <h1>On automatise <span>vos heures perdues</span></h1>
+        <p class="hero-lead">Workflows Make / n8n pour TPE et indépendants. Vous closez. On branche. Le process tourne.</p>
+
+        <div class="tabs" role="tablist" aria-label="Offres">
+          <button type="button" class="tab is-on" role="tab" aria-selected="true" data-tab="sprint">Sprint</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="pack3">Pack 3</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="retainer">Retainer</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="demo">Démo</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-tab="plus" id="tab-plus">Plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         </div>
-        <p id="pill-copy" class="hero-lead" style="margin-top:-0.5rem;font-size:0.98rem">1 workflow livré — cadrage, build, tests, handoff.</p>
+        <div class="plus-pop" id="plus-pop" hidden>
+          <a href="#hours">Workflows</a>
+          <a href="#calc">Calculateur</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
         <div class="hero-cta">
-          <a class="btn btn-green btn-block" href="#contact">Parler 20 min <span aria-hidden="true">→</span></a>
+          <a class="btn-forest" id="hero-cta" href="mailto:hello@flixly.me?subject=Flixly%20—%20Sprint">Cadrer un Sprint <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+          <a class="hero-sublink" href="#demo">Démo photo → cartoon → site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="preuve" data-animate>
-      <div class="wrap">
-        <h2>Avant / avec Flixly</h2>
-        <p class="lede">Même travail. Moins de coller-copier. Chiffres illustratifs pour cadrer le ROI.</p>
-        <div class="compare">
-          <article class="card before">
-            <h3>Manuel</h3>
-            <p class="stat bad" data-count="12" data-suffix=" h">0 h</p>
-            <p>relances, exports, mises à jour site — perdues chaque mois</p>
-          </article>
-          <article class="card after">
-            <h3>Avec Flixly</h3>
-            <p class="stat good" data-count="2" data-suffix=" h">0 h</p>
-            <p>supervision + exceptions. Le reste tourne tout seul.</p>
-          </article>
-        </div>
+      <div class="proof">
+        <p class="join">En moyenne <span id="join-n" data-count="12">0</span> h récupérées / mois</p>
 
-        <div class="bars" style="margin-top:2rem" data-animate>
-          <div class="bar-row">
-            <label><span>Saisie / re-saisie</span><strong>−80%</strong></label>
-            <div class="track"><div class="fill" data-width="80%"></div></div>
+        <div class="chart" data-animate>
+          <div class="chart-grid" aria-hidden="true">
+            <span style="left:0"></span>
+            <span style="left:18%"></span>
+            <span style="left:42%"></span>
+            <span style="left:68%"></span>
           </div>
-          <div class="bar-row">
-            <label><span>Délai de réponse client</span><strong>−60%</strong></label>
-            <div class="track"><div class="fill" data-width="60%"></div></div>
-          </div>
-          <div class="bar-row">
-            <label><span>Oublis de relance</span><strong class="stat bad" style="font-size:1rem">risque</strong></label>
-            <div class="track"><div class="fill red" data-width="90%"></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="calc" data-animate>
-      <div class="wrap">
-        <h2>Tu gagnes combien ?</h2>
-        <p class="lede">Estimateur rapide — ajuste les curseurs. Pas une promesse contractuelle.</p>
-        <div class="calc card">
-          <div>
-            <label>Tâches répétitives / jour (<span id="calc-tasks-val">8</span>)</label>
-            <input id="calc-tasks" type="range" min="2" max="30" value="8" />
-            <label>Minutes par tâche (<span id="calc-mins-val">12</span>)</label>
-            <input id="calc-mins" type="range" min="3" max="45" value="12" />
-          </div>
-          <div class="calc-out">
-            <div class="big" id="calc-hours">32</div>
-            <div class="sub" id="calc-label">heures / mois récupérées (estimation)</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="demo">
-      <div class="wrap">
-        <h2>Démo phare</h2>
-        <p class="lede">Photo → cartoon → page mise à jour. Ce que vous vendez, vous le montrez.</p>
-        <div class="product">
-          <div>
-            <div class="tag">Photo → site</div>
-            <p style="color:var(--muted)">Formulaire / mail / Drive → génération stylisée → asset publié + notif avec le lien.</p>
-            <ul>
-              <li>1 canal MVP (Tally / webhook)</li>
-              <li>n8n + Pages</li>
-              <li>États : received → published</li>
-            </ul>
-            <p style="margin-top:1rem"><a class="btn btn-ghost" href="live.html">Page rendu →</a></p>
-          </div>
-          <div class="mock" aria-hidden="true">
-            <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
-            <div class="mock-body">
-              <div class="mock-row"><span>photo.jpg</span><span class="ok">received</span></div>
-              <div class="mock-row"><span>cartoon</span><span class="ok">generating</span></div>
-              <img src="assets/latest.svg" alt="" width="400" height="400" />
-              <div class="mock-row" style="margin-top:0.5rem"><span>latest.svg</span><span class="ok">published</span></div>
+          <div class="chart-row is-flixly">
+            <div class="chart-label">
+              <img src="assets/logo.svg" width="26" height="26" alt="" />
+              <span>Flixly Sprint</span>
+            </div>
+            <div class="chart-bar">
+              <div class="bar bar-green" data-width="12%"></div>
+              <span class="chart-val green" style="left:12%">349 € <em>/ pack</em></span>
             </div>
           </div>
+
+          <div class="chart-row">
+            <div class="chart-label">
+              <span class="ico ico-person" aria-hidden="true"></span>
+              <span>Freelance Make</span>
+            </div>
+            <div class="chart-bar">
+              <div class="bar bar-red" data-width="34%"></div>
+              <span class="chart-val" style="left:34%">1 200 € <em>/ mission</em></span>
+            </div>
+          </div>
+
+          <div class="chart-row">
+            <div class="chart-label">
+              <span class="ico ico-grid" aria-hidden="true"></span>
+              <span>Outils + votre temps</span>
+            </div>
+            <div class="chart-bar">
+              <div class="bar bar-red" data-width="48%"></div>
+              <span class="chart-val" style="left:48%">2 400 € <em>/ an</em></span>
+            </div>
+          </div>
+
+          <div class="chart-row">
+            <div class="chart-label">
+              <span class="ico ico-building" aria-hidden="true"></span>
+              <span>Agence no-code</span>
+            </div>
+            <div class="chart-bar">
+              <div class="bar bar-red" data-width="62%"></div>
+              <span class="chart-val" style="left:62%">4 800 € <em>/ projet</em></span>
+            </div>
+          </div>
+
+          <div class="chart-row">
+            <div class="chart-label">
+              <span class="ico ico-chaos" aria-hidden="true"></span>
+              <span>Statu quo manuel</span>
+            </div>
+            <div class="chart-bar">
+              <div class="bar bar-red" data-width="66%"></div>
+              <span class="chart-val" style="left:66%">5 760 € <em>/ an</em></span>
+            </div>
+          </div>
+
+          <div class="chart-row">
+            <div class="chart-label">
+              <span class="ico ico-hire" aria-hidden="true"></span>
+              <span>Recruter un ops</span>
+            </div>
+            <div class="chart-bar">
+              <div class="bar bar-red" data-width="74%"></div>
+              <span class="chart-val" style="left:74%">30 000 € <em>/ an</em></span>
+            </div>
+          </div>
+
+          <div class="chart-axis">
+            <span style="left:0">0 €</span>
+            <span style="left:18%">500 €</span>
+            <span style="left:42%">2 k€</span>
+            <span style="left:68%">10 k€</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="packs">
-      <div class="wrap">
-        <h2>Packs</h2>
-        <p class="lede">Prix figés. Arthur close et facture (SIRET).</p>
-        <div class="products">
-          <article class="product">
-            <div>
-              <div class="tag">Sprint</div>
-              <div class="price">349 € <small>1 workflow</small></div>
-              <ul>
-                <li>Cadrage → build → tests</li>
-                <li>Runbook de handoff</li>
-                <li>Idéal démo photo ou 1 process</li>
-              </ul>
+    <div class="ground" aria-hidden="true"></div>
+
+    <section class="block" id="hours" aria-labelledby="hours-h">
+      <div class="wide">
+        <div class="hours-head">
+          <h2 id="hours-h"><span>Heures</span> rendues, par workflow</h2>
+          <div class="seg" role="tablist" aria-label="Périmètre">
+            <button type="button" class="seg-btn is-on" role="tab" aria-selected="true" data-hours="sprint">Sprint</button>
+            <button type="button" class="seg-btn" role="tab" aria-selected="false" data-hours="pack3">Pack 3</button>
+          </div>
+        </div>
+        <p class="hours-lead" id="hours-lead"><strong>1 workflow prioritaire.</strong> Cadrage, build, tests, handoff. Les totaux ci-dessous illustrent le temps encore perdu aujourd’hui — pas une promesse contractuelle.</p>
+        <ul class="hours-list" id="hours-list" data-animate></ul>
+        <p class="fine">Les heures ne s’additionnent pas : un Sprint traite un flux. Pack 3 en fige trois au cadrage. Chiffres illustratifs pour TPE / indépendants.</p>
+      </div>
+    </section>
+
+    <section class="block" id="calc">
+      <div class="wide">
+        <h2 class="save-h">Voyez ce que vous économisez</h2>
+        <div class="save">
+          <div class="save-board">
+            <div class="pills" id="save-pills"></div>
+            <div class="seats">
+              <div class="seats-row">
+                <span>Taille d’équipe</span>
+                <span id="seats-label">1 pers.</span>
+              </div>
+              <input id="seats" type="range" min="1" max="12" step="1" value="1" aria-label="Taille d’équipe" />
             </div>
-            <div class="product-side">Délai typique : quelques jours une fois les accès OK.</div>
-          </article>
-          <article class="product">
-            <div>
-              <div class="tag">Pack 3</div>
-              <div class="price">899 € <small>3 workflows</small></div>
-              <ul>
-                <li>Périmètre figé à 3</li>
-                <li>Doc + session de passation</li>
-                <li>Priorisation au cadrage</li>
-              </ul>
-            </div>
-            <div class="product-side">Le pack le plus demandé quand plusieurs flux se touchent.</div>
-          </article>
-          <article class="product">
-            <div>
-              <div class="tag">Retainer</div>
-              <div class="price">249 € <small>/ mois</small></div>
-              <ul>
-                <li>Monitoring & correctifs</li>
-                <li>Petites évolutions</li>
-                <li>Priorisation mensuelle</li>
-              </ul>
-            </div>
-            <div class="product-side">Nouveau workflow majeur = Sprint ou avenant.</div>
-          </article>
+          </div>
+          <aside class="save-sum" aria-live="polite">
+            <p class="sum-k">Vous récupérez</p>
+            <p class="sum-n" id="sum-euro">0 €</p>
+            <p class="sum-u">/ mois</p>
+            <p class="sum-h" id="sum-hours">0 h × 40 € × 1 pers.</p>
+            <a class="btn-forest sm" href="mailto:hello@flixly.me?subject=Flixly%20—%20cadrage">Cadrer le n°1</a>
+            <p class="sum-note">Estimateur. 40 €/h, 20 jours / mois. Arthur close et facture (SIRET).</p>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="section" id="exemples">
-      <div class="wrap">
-        <h2>Autres workflows</h2>
-        <div class="examples">
-          <div class="example"><div class="label">Leads → CRM</div><p>Capture → enrichissement basique → fiche + notif équipe.</p></div>
-          <div class="example"><div class="label">Relance J+3</div><p>Devis non signé → rappel → statut CRM à jour.</p></div>
-          <div class="example"><div class="label">Form → PDF</div><p>Réponses → template → PDF → envoi + archivage.</p></div>
+    <section class="intro" id="sprint">
+      <div class="intro-grid">
+        <div>
+          <span class="chip">Pack</span>
+          <h2>Sprint <span>349 €</span></h2>
+          <p>1 workflow livré : cadrage → build → tests → runbook de handoff. Idéal pour la démo photo ou un process qui saigne.</p>
+          <p class="replaces">Remplace ces allers-retours</p>
+          <ul class="repl-list">
+            <li><span class="dot"></span>Briefs Slack sans fin</li>
+            <li><span class="dot"></span>Freelance “on verra”</li>
+            <li><span class="dot"></span>Soirées Zapier</li>
+          </ul>
+          <a class="btn-white" href="mailto:hello@flixly.me?subject=Flixly%20—%20Sprint">Cadrer un Sprint</a>
+          <p class="muted-sm">Délai typique : quelques jours une fois les accès OK.</p>
+        </div>
+        <div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>Sprint · workflow #1</span></div>
+          <div class="mock-body">
+            <div class="step"><b>01</b> Capture (Tally / mail / Drive)</div>
+            <div class="step"><b>02</b> Make / n8n — mapping + garde-fous</div>
+            <div class="step on"><b>03</b> Tests sur vos cas réels</div>
+            <div class="step"><b>04</b> Handoff + runbook</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="faq">
-      <div class="wrap">
-        <h2>FAQ</h2>
+    <section class="intro alt" id="pack3">
+      <div class="intro-grid">
+        <div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>Pack 3 · périmètre figé</span></div>
+          <div class="mock-body trio">
+            <div class="mini">Leads → CRM</div>
+            <div class="mini">Relance J+3</div>
+            <div class="mini">Form → PDF</div>
+            <p class="mock-note">Trois flux qui se parlent. Une session de passation.</p>
+          </div>
+        </div>
+        <div>
+          <span class="chip">Le plus demandé</span>
+          <h2>Pack 3 <span>899 €</span></h2>
+          <p>Trois workflows figés au cadrage, doc, session de passation. Quand plusieurs flux se touchent — leads, relances, docs.</p>
+          <p class="replaces">Typiquement à la place de</p>
+          <ul class="repl-list">
+            <li><span class="dot"></span>Agence “phase 1” à 4–8 k€</li>
+            <li><span class="dot"></span>Recrutement ops trop tôt</li>
+            <li><span class="dot"></span>Trois Sprints séparés</li>
+          </ul>
+          <a class="btn-white" href="mailto:hello@flixly.me?subject=Flixly%20—%20Pack%203">Cadrer un Pack 3</a>
+          <p class="muted-sm">Priorisation au cadrage. Périmètre fermé à 3.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="retainer">
+      <div class="intro-grid">
+        <div>
+          <span class="chip">Mensuel</span>
+          <h2>Retainer <span>249 €/mois</span></h2>
+          <p>Monitoring, correctifs, petites évolutions, priorisation mensuelle. Un nouveau workflow majeur = Sprint ou avenant.</p>
+          <p class="replaces">Ce qui tourne chaque mois</p>
+          <ul class="repl-list">
+            <li><span class="dot"></span>Vérif des runs + alertes</li>
+            <li><span class="dot"></span>Micro-ajustements de mapping</li>
+            <li><span class="dot"></span>File d’attente mensuelle</li>
+          </ul>
+          <a class="btn-white" href="mailto:hello@flixly.me?subject=Flixly%20—%20Retainer">Parler retainer</a>
+          <p class="muted-sm">Sans Mac. Stack cloud Make / n8n.</p>
+        </div>
+        <div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>Retainer · 30 jours</span></div>
+          <div class="mock-body">
+            <div class="mon-row"><span>relance-devis</span><span class="ok">ok</span></div>
+            <div class="mon-row"><span>leads-crm</span><span class="ok">ok</span></div>
+            <div class="mon-row"><span>photo-site</span><span class="ok">ok</span></div>
+            <div class="mon-row"><span>file du mois</span><span class="wait">2 tickets</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro alt" id="demo">
+      <div class="intro-grid">
+        <div class="mock demo-mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>flixly.me · pipeline</span></div>
+          <div class="pipeline">
+            <figure>
+              <div class="photo-ph" aria-hidden="true"></div>
+              <figcaption>photo.jpg</figcaption>
+            </figure>
+            <span class="pipe" aria-hidden="true">→</span>
+            <figure>
+              <img src="assets/latest.svg" width="400" height="400" alt="Rendu cartoon" />
+              <figcaption>cartoon</figcaption>
+            </figure>
+            <span class="pipe" aria-hidden="true">→</span>
+            <figure class="site-ph">
+              <div class="site-top">Studio</div>
+              <img src="assets/latest.svg" width="200" height="200" alt="" />
+              <figcaption>page live</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div>
+          <span class="chip">Démo phare</span>
+          <h2>Photo → cartoon → <span>site</span></h2>
+          <p>Ce que vous vendez, vous le montrez. Formulaire / mail / Drive → génération stylisée → asset publié + notif avec le lien.</p>
+          <ul class="repl-list">
+            <li><span class="dot"></span>1 canal MVP (Tally / webhook)</li>
+            <li><span class="dot"></span>n8n + Pages</li>
+            <li><span class="dot"></span>États : received → published</li>
+          </ul>
+          <a class="btn-white" href="live.html">Page rendu</a>
+          <p class="muted-sm">Sprint photo ~48 h une fois les accès OK.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block faq-block" id="faq">
+      <div class="wide">
+        <h2 class="faq-h">Questions</h2>
         <div class="faq">
-          <details><summary>Faut-il un Mac / une équipe tech ?</summary><p class="ans">Non. Stack cloud Make/n8n. Rien de critique en local.</p></details>
-          <details><summary>Qui facture ?</summary><p class="ans">Arthur (SIRET). Close commercial côté Arthur.</p></details>
-          <details><summary>Délai d’un Sprint ?</summary><p class="ans">Quelques jours après accès. Démo photo ~48 h une fois OK.</p></details>
-          <details><summary>Et après ?</summary><p class="ans">Retainer 249 €/mois : monitoring, petits correctifs, priorisation.</p></details>
+          <details open>
+            <summary><span>01</span> Faut-il un Mac / une équipe tech ?</summary>
+            <p>Non. Stack cloud Make / n8n. Rien de critique en local. Arthur close, on livre le workflow.</p>
+          </details>
+          <details>
+            <summary><span>02</span> Qui facture ?</summary>
+            <p>Arthur (SIRET). Close commercial côté Arthur. Devis Sprint ou Pack 3 sous 24–48 h après un call de 20 min.</p>
+          </details>
+          <details>
+            <summary><span>03</span> Délai d’un Sprint ?</summary>
+            <p>Quelques jours après accès. Démo photo → cartoon → site : ~48 h une fois OK.</p>
+          </details>
+          <details>
+            <summary><span>04</span> Et après le livrable ?</summary>
+            <p>Retainer 249 €/mois : monitoring, petits correctifs, priorisation. Nouveau flux majeur = Sprint ou avenant.</p>
+          </details>
+          <details>
+            <summary><span>05</span> Make ou n8n ?</summary>
+            <p>Celui qui colle à vos outils et à votre budget d’exécution. On tranche au cadrage, pas sur un slide.</p>
+          </details>
+          <details>
+            <summary><span>06</span> La démo photo, c’est quoi ?</summary>
+            <p>Un pipeline réel : photo reçue → rendu cartoon → page mise à jour. Preuve que le flux tourne, pas une maquette Figma.</p>
+          </details>
+          <details>
+            <summary><span>07</span> Comment se passent les accès ?</summary>
+            <p>Comptes Make/n8n, boîte mail ou Drive du process, un exemple de cas réel. On ne demande pas la clé de la maison.</p>
+          </details>
+          <details>
+            <summary><span>08</span> C’est du template ?</summary>
+            <p>Non. Périmètre figé, build sur votre process. Les exemples (leads, relances, PDF) servent à cadrer, pas à cloner un autre client.</p>
+          </details>
         </div>
       </div>
     </section>
 
-    <div class="wrap">
-      <section class="cta" id="contact">
+    <section class="final" id="contact">
+      <div class="hero-copy">
         <h2>20 minutes pour choisir le workflow n°1</h2>
-        <p>Devis Sprint ou Pack 3 sous 24–48 h.</p>
-        <a class="btn btn-green btn-block" href="mailto:hello@flixly.me?subject=Flixly%20—%20cadrage">Écrire à hello@flixly.me →</a>
-      </section>
-    </div>
+        <p>Devis Sprint 349 € ou Pack 3 899 € sous 24–48 h.</p>
+        <a class="btn-forest" href="mailto:hello@flixly.me?subject=Flixly%20—%20cadrage">Écrire à hello@flixly.me <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      <span>© Flixly · <a href="https://flixly.me">flixly.me</a></span>
-      <span>Make / n8n · sans Mac</span>
+    <div class="foot">
+      <a class="logo" href="#top"><img src="assets/logo.svg" width="20" height="20" alt="" /><span>Flixly</span></a>
+      <span>Make / n8n · TPE / PME · <a href="https://flixly.me">flixly.me</a></span>
     </div>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>
