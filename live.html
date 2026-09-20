@@ -6,29 +6,26 @@
   <title>Flixly — Rendu live</title>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
-    .live-box { max-width: 420px; margin: 4rem auto; padding: 1.5rem; background: #fff; border: 1px solid var(--border); border-radius: 12px; text-align: center; }
-    .live-box img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); margin: 1rem 0; }
-    .live-box .meta { color: var(--muted); font-size: 0.85rem; }
+    .box { max-width: 420px; margin: 3.5rem auto; padding: 1.4rem; border: 1px solid var(--line); border-radius: 16px; background: var(--bg-card); text-align: center; }
+    .box img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); margin: 1rem 0; }
+    .meta { color: var(--muted); font-size: 0.85rem; }
   </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="logo" href="index.html">Flix<span>ly</span></a>
-      <a class="btn btn-light" href="index.html">← Landing</a>
-    </div>
-  </header>
-  <div class="live-box">
-    <p class="hero-kicker" style="margin:0">Rendu pipeline</p>
-    <h1 style="font-size:1.35rem;margin:0.5rem 0">Latest render</h1>
-    <p class="meta">Écrasé à chaque run réussi.</p>
-    <img id="render" src="assets/latest.svg" alt="Dernier rendu Flixly" width="800" height="800" />
-    <p class="meta" id="stamp"></p>
+  <header class="nav"><div class="wrap nav-inner">
+    <a class="logo" href="index.html">Flix<span>ly</span></a>
+    <a class="btn btn-ghost" href="index.html">← Landing</a>
+  </div></header>
+  <div class="box">
+    <p class="hero-kicker" style="margin:0">pipeline</p>
+    <h1 style="font-size:1.4rem;margin:0.4rem 0">Latest render</h1>
+    <img id="r" src="assets/latest.svg" alt="Rendu Flixly" width="800" height="800" />
+    <p class="meta" id="s"></p>
   </div>
   <script>
-    var v = Date.now();
-    document.getElementById('render').src = 'assets/latest.svg?v=' + v;
-    document.getElementById('stamp').textContent = 'Flixly · ' + v;
+    var v=Date.now();
+    document.getElementById('r').src='assets/latest.svg?v='+v;
+    document.getElementById('s').textContent='Flixly · '+v;
   </script>
 </body>
 </html>
