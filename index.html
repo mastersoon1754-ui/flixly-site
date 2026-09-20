@@ -1,1 +1,90 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flixly — Automatisations qui travaillent pendant que tu closes</title>
+  <meta name="description" content="Flixly livre des workflows Make/n8n clés en main. Démo phare : photo → cartoon → site mis à jour." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="orb orb-b" aria-hidden="true"></div>
+  <header class="nav">
+    <a class="logo" href="#top">Flix<span>ly</span></a>
+    <nav class="nav-links">
+      <a href="#story">Comment</a>
+      <a href="#offers">Packs</a>
+      <a href="#live">Démo live</a>
+      <a class="btn btn-primary" href="#cta">Parler 20 min</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow"><i></i> flixly.me · automatisations sur mesure</div>
+        <h1 class="parallax-slow">Une photo.<br /><em>Un site à jour.</em><br />Sans toucher à la technique.</h1>
+        <p class="hero-lead">Flixly branche Make / n8n sur tes outils. La démo phare : tu envoies une photo, on génère un cartoon, ta page publique se met à jour toute seule.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#story">Voir le flux</a>
+          <a class="btn btn-ghost" href="#offers">Packs dès 349 €</a>
+        </div>
+        <div class="hero-visual">
+          <div class="phone-stack">
+            <div class="phone">
+              <img id="hero-render" src="assets/latest.svg" alt="Rendu cartoon Flixly" width="800" height="800" />
+              <div class="phone-cap"><span>assets/latest.svg</span><span class="badge-live">● live</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="value">
+      <div class="section-head reveal"><h2>Pas un autre outil. Un workflow livré.</h2><p>Tu gardes la relation client. On build, on teste, on te rend les clés.</p></div>
+      <div class="grid-3">
+        <article class="card reveal"><div class="icon">⚡</div><h3>Sprint en jours</h3><p>Un workflow prioritaire, critères clairs, handoff documenté.</p></article>
+        <article class="card reveal d1"><div class="icon">🧩</div><h3>Stack cloud</h3><p>n8n ou Make, GitHub Pages. Pas de Mac requis.</p></article>
+        <article class="card reveal d2"><div class="icon">✨</div><h3>Démo tangible</h3><p>Photo → cartoon → page live en 60 secondes.</p></article>
+      </div>
+    </section>
+    <section class="story" id="story">
+      <div class="section-head reveal"><h2>Scroll the magic</h2><p>Trois étapes. Une seule automatisation.</p></div>
+      <div class="story-track">
+        <div class="story-sticky"><div class="story-panel">
+          <div class="step-visual active" data-step="0"><p class="big">01</p><p class="sub">Photo reçue<br />formulaire · mail · Drive</p></div>
+          <div class="step-visual" data-step="1"><p class="big">02</p><p class="sub">IA cartoon / 3D<br />Replicate · prompt figé</p></div>
+          <div class="step-visual" data-step="2"><img src="assets/latest.svg" alt="Rendu publié" width="400" height="400" /><p class="sub" style="margin-top:0.75rem">Publié sur ta page</p></div>
+        </div></div>
+        <div class="steps">
+          <article class="step active" data-step="0"><div class="n">Étape 01 · received</div><h3>Tu envoies la photo</h3><p>Tally ou webhook — zéro action manuelle ensuite.</p></article>
+          <article class="step" data-step="1"><div class="n">Étape 02 · generating</div><h3>Le rendu se crée</h3><p>Cartoon ou 3D stylisé, latence démo sous 2–3 min.</p></article>
+          <article class="step" data-step="2"><div class="n">Étape 03 · published</div><h3>Le site se met à jour</h3><p>Asset remplacé, notif + lien public.</p></article>
+          <div style="height:30vh" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+    <section class="section pricing" id="offers">
+      <div class="section-head reveal"><h2>Packs simples</h2><p>Arthur close et facture (SIRET).</p></div>
+      <div class="grid-3">
+        <article class="card reveal"><h3>Sprint</h3><p class="price">349 € <small>1 workflow</small></p><ul><li>Cadrage → build → tests</li><li>Handoff + runbook</li></ul><a class="btn btn-ghost" href="#cta">Choisir Sprint</a></article>
+        <article class="card featured reveal d1"><span class="tag">Populaire</span><h3>Pack 3</h3><p class="price">899 € <small>3 workflows</small></p><ul><li>Intégration + doc</li><li>Session de passation</li></ul><a class="btn btn-primary" href="#cta">Choisir Pack 3</a></article>
+        <article class="card reveal d2"><h3>Retainer</h3><p class="price">249 € <small>/ mois</small></p><ul><li>Monitoring</li><li>Petites évolutions</li></ul><a class="btn btn-ghost" href="#cta">En parler</a></article>
+      </div>
+    </section>
+    <section class="section" id="live">
+      <div class="demo-block">
+        <div class="reveal"><div class="section-head" style="margin-bottom:1.25rem"><h2>Rendu live</h2><p>Mis à jour par le pipeline.</p></div><a class="btn btn-ghost" href="live.html">Page minimaliste →</a></div>
+        <div class="demo-frame reveal d1"><img id="live-render" src="assets/latest.svg" alt="Dernier rendu Flixly" width="800" height="800" /><div class="demo-meta"><span>Flixly</span><span>live</span></div></div>
+      </div>
+    </section>
+    <section class="cta-band reveal" id="cta">
+      <h2>Prochaine étape : 20 minutes</h2>
+      <p>Devis Sprint ou Pack 3 sous 24–48 h.</p>
+      <a class="btn btn-primary" href="mailto:hello@flixly.me?subject=Flixly%20cadrage">Écrire à Flixly</a>
+    </section>
+  </main>
+  <footer><p>© Flixly · <a href="https://flixly.me">flixly.me</a></p></footer>
+  <script src="js/scroll.js"></script>
+</body>
+</html>
